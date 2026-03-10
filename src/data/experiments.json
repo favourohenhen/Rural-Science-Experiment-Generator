@@ -1,0 +1,1170 @@
+{
+    "featured_experiments": [
+        {
+            "id": "exp_001",
+            "title": "Simple Circuit with Battery and Bulb",
+            "topic_id": "electricity",
+            "topic_name": "Electricity",
+            "subject_id": "physics",
+            "subject_name": "Physics"
+        },
+        {
+            "id": "exp_003",
+            "title": "Natural Indicator with Hibiscus or Red Cabbage",
+            "topic_id": "acids_and_bases",
+            "topic_name": "Acids and Bases",
+            "subject_id": "chemistry",
+            "subject_name": "Chemistry"
+        },
+        {
+            "id": "exp_005",
+            "title": "Homemade Water Filter",
+            "topic_id": "separation_techniques",
+            "topic_name": "Separation Techniques",
+            "subject_id": "chemistry",
+            "subject_name": "Chemistry"
+        },
+        {
+            "id": "exp_008",
+            "title": "Floating Egg in Salt Water",
+            "topic_id": "density",
+            "topic_name": "Density",
+            "subject_id": "physics",
+            "subject_name": "Physics"
+        },
+        {
+            "id": "exp_010",
+            "title": "Homemade Compass",
+            "topic_id": "magnetism",
+            "topic_name": "Magnetism",
+            "subject_id": "physics",
+            "subject_name": "Physics"
+        },
+        {
+            "id": "exp_012",
+            "title": "Water Movement in a Plant Stem",
+            "topic_id": "plants",
+            "topic_name": "Plants",
+            "subject_id": "biology",
+            "subject_name": "Biology"
+        }
+    ],
+    "subjects": [
+        {
+            "subject_id": "physics",
+            "subject_name": "Physics"
+        },
+        {
+            "subject_id": "chemistry",
+            "subject_name": "Chemistry"
+        },
+        {
+            "subject_id": "biology",
+            "subject_name": "Biology"
+        }
+    ],
+    "topics": [
+        {
+            "topic_id": "electricity",
+            "topic_name": "Electricity",
+            "experiments": [
+                {
+                    "id": "exp_001",
+                    "title": "Simple Circuit with Battery and Bulb",
+                    "subject_id": "physics",
+                    "subject_name": "Physics",
+                    "short_description": "Build a basic electric circuit to learn how current flows in a closed path.",
+                    "materials": [
+                        "2 dry cells or AA batteries",
+                        "1 small torch bulb or LED",
+                        "2 pieces of insulated wire",
+                        "Tape"
+                    ],
+                    "local_alternatives": [
+                        "Use aluminium foil strips if proper wires are not available",
+                        "Use a small bulb from an old torch",
+                        "Use a low-voltage LED if a torch bulb is not available"
+                    ],
+                    "instructions": [
+                        "Place the two dry cells together to form a small power source.",
+                        "Connect one wire from the positive end of the battery to the metal side of the bulb.",
+                        "Connect the second wire from the negative end of the battery to the bottom tip of the bulb.",
+                        "Observe whether the bulb lights up.",
+                        "Remove one wire and observe what happens.",
+                        "Reconnect the wire and compare your observation."
+                    ],
+                    "safety_notes": [
+                        "Use only small dry cells, never a wall socket.",
+                        "Do not keep bare wires touching for a long time.",
+                        "Do not use leaking or damaged batteries.",
+                        "Stop the experiment if the battery becomes hot."
+                    ],
+                    "concept_explanation": "Electric current flows only when there is a complete path called a closed circuit. When the path is broken, current cannot move and the bulb goes off. This introduces simple circuits, open circuits, and electrical components.",
+                    "diagram_hint": "Draw two batteries, two wires, and one bulb connected in a loop. Show a second drawing with one wire removed to represent an open circuit.",
+                    "quiz": [
+                        {
+                            "question": "Why did the bulb light up?",
+                            "options": [
+                                "Because the circuit was complete",
+                                "Because the bulb was shaken",
+                                "Because the battery was heavy",
+                                "Because the wires were long"
+                            ],
+                            "answer": "Because the circuit was complete",
+                            "explanation": "The bulb lights only when there is a complete path for current to flow."
+                        },
+                        {
+                            "question": "What happens when one wire is removed?",
+                            "options": [
+                                "The bulb gets brighter",
+                                "The bulb goes off",
+                                "The battery changes color",
+                                "Nothing happens"
+                            ],
+                            "answer": "The bulb goes off",
+                            "explanation": "Removing one wire breaks the circuit, so current can no longer flow."
+                        },
+                        {
+                            "question": "Which source is safe for this experiment?",
+                            "options": [
+                                "Dry cell battery",
+                                "Wall socket",
+                                "Electric pole",
+                                "Generator output wire"
+                            ],
+                            "answer": "Dry cell battery",
+                            "explanation": "A small dry cell provides a safe low-voltage source for a beginner experiment."
+                        }
+                    ]
+                },
+                {
+                    "id": "exp_002",
+                    "title": "Testing Conductors and Insulators",
+                    "subject_id": "physics",
+                    "subject_name": "Physics",
+                    "short_description": "Use a simple battery-and-bulb setup to find out which materials allow electricity to pass through them.",
+                    "materials": [
+                        "2 dry cells",
+                        "1 small bulb or LED",
+                        "3 pieces of wire",
+                        "Tape",
+                        "Items to test such as coin, key, plastic spoon, dry wood, paper clip"
+                    ],
+                    "local_alternatives": [
+                        "Use foil strips if wires are limited",
+                        "Use a torch bulb from an old flashlight",
+                        "Use any safe household objects that are dry and clean"
+                    ],
+                    "instructions": [
+                        "Set up a simple circuit with a small gap between two wires.",
+                        "Place one test item across the gap.",
+                        "Observe whether the bulb lights.",
+                        "Repeat the test with different items such as metal, plastic, paper, and wood.",
+                        "Record which items allowed the bulb to light."
+                    ],
+                    "safety_notes": [
+                        "Use only dry objects.",
+                        "Never test with objects connected to mains electricity.",
+                        "Do not use wet hands.",
+                        "Use only low-voltage batteries."
+                    ],
+                    "concept_explanation": "Some materials, such as metals, allow electric current to pass through easily and are called conductors. Others, such as plastic and dry wood, resist current and are called insulators. This helps students connect practical observation to electrical safety.",
+                    "diagram_hint": "Draw a simple circuit with a gap between two wire ends. Show different materials placed across the gap and label conductor or insulator based on whether the bulb lights.",
+                    "quiz": [
+                        {
+                            "question": "Which material is most likely to be a conductor?",
+                            "options": [
+                                "Metal coin",
+                                "Plastic spoon",
+                                "Dry wood",
+                                "Paper"
+                            ],
+                            "answer": "Metal coin",
+                            "explanation": "Metals usually allow current to pass through them and are good conductors."
+                        },
+                        {
+                            "question": "Why did the bulb not light with plastic?",
+                            "options": [
+                                "Plastic is an insulator",
+                                "Plastic is too heavy",
+                                "Plastic is wet",
+                                "Plastic gives extra power"
+                            ],
+                            "answer": "Plastic is an insulator",
+                            "explanation": "Plastic does not allow current to flow easily, so the circuit does not complete."
+                        },
+                        {
+                            "question": "What is the main aim of the experiment?",
+                            "options": [
+                                "To separate conductors from insulators",
+                                "To make the battery bigger",
+                                "To heat the wires",
+                                "To test bulb color"
+                            ],
+                            "answer": "To separate conductors from insulators",
+                            "explanation": "The experiment helps identify materials that allow current to pass and those that do not."
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "topic_id": "acids_and_bases",
+            "topic_name": "Acids and Bases",
+            "experiments": [
+                {
+                    "id": "exp_003",
+                    "title": "Natural Indicator with Hibiscus or Red Cabbage",
+                    "subject_id": "chemistry",
+                    "subject_name": "Chemistry",
+                    "short_description": "Make a natural indicator to test whether common liquids are acidic or basic.",
+                    "materials": [
+                        "Hibiscus petals or red cabbage leaves",
+                        "Warm water",
+                        "3 to 5 transparent cups",
+                        "Spoon",
+                        "Sieve or cloth filter",
+                        "Lemon juice",
+                        "Soap water",
+                        "Plain water",
+                        "Baking soda solution"
+                    ],
+                    "local_alternatives": [
+                        "Use zobo leaves or red cabbage if available",
+                        "Use small transparent bottles instead of cups",
+                        "Use any clear cup or bottle cover",
+                        "Use ash water carefully as a weak basic solution if baking soda is not available"
+                    ],
+                    "instructions": [
+                        "Soak hibiscus petals or chopped red cabbage leaves in warm water for some minutes.",
+                        "Stir the mixture and filter it to get a colored liquid.",
+                        "Pour the indicator into separate cups.",
+                        "Add lemon juice to one cup.",
+                        "Add soap water or baking soda solution to another cup.",
+                        "Leave one cup with plain water as a control.",
+                        "Observe and compare the color changes."
+                    ],
+                    "safety_notes": [
+                        "Do not drink any of the test liquids.",
+                        "Wash hands after handling soap water or ash water.",
+                        "Avoid contact with eyes.",
+                        "Use only safe household liquids."
+                    ],
+                    "concept_explanation": "A natural indicator changes color in acidic and basic substances. Lemon juice is acidic, while soap water and baking soda solution are basic. The experiment introduces acids, bases, indicators, and the use of a control sample.",
+                    "diagram_hint": "Draw four cups with indicator solution labeled lemon juice, plain water, soap water, and baking soda solution. Use arrows to show different color results.",
+                    "quiz": [
+                        {
+                            "question": "What is the job of an indicator?",
+                            "options": [
+                                "To show if a substance is acidic or basic",
+                                "To increase temperature",
+                                "To remove dirt",
+                                "To make water evaporate"
+                            ],
+                            "answer": "To show if a substance is acidic or basic",
+                            "explanation": "Indicators are used to test whether a solution is acidic, neutral, or basic."
+                        },
+                        {
+                            "question": "Which of these is likely acidic?",
+                            "options": [
+                                "Lemon juice",
+                                "Soap water",
+                                "Ash water",
+                                "Baking soda solution"
+                            ],
+                            "answer": "Lemon juice",
+                            "explanation": "Lemon juice contains acid and usually gives an acid-type color change."
+                        },
+                        {
+                            "question": "Why is plain water kept in one cup?",
+                            "options": [
+                                "To serve as a comparison",
+                                "To waste materials",
+                                "To make the experiment longer",
+                                "To produce heat"
+                            ],
+                            "answer": "To serve as a comparison",
+                            "explanation": "Plain water acts as a control so the color changes can be compared more clearly."
+                        }
+                    ]
+                },
+                {
+                    "id": "exp_004",
+                    "title": "Reaction of Vinegar and Baking Soda",
+                    "subject_id": "chemistry",
+                    "subject_name": "Chemistry",
+                    "short_description": "Observe gas production when a weak acid reacts with a weak base.",
+                    "materials": [
+                        "Vinegar",
+                        "Baking soda",
+                        "Small bottle or cup",
+                        "Spoon",
+                        "Balloon"
+                    ],
+                    "local_alternatives": [
+                        "Use lime juice if vinegar is not available",
+                        "Use any small plastic bottle or transparent cup",
+                        "Use paper funnel if a proper funnel is not available"
+                    ],
+                    "instructions": [
+                        "Pour a small amount of vinegar into the bottle.",
+                        "Put one or two spoonfuls of baking soda into the balloon using a paper funnel.",
+                        "Stretch the balloon mouth over the bottle opening without pouring the powder in yet.",
+                        "Lift the balloon so the baking soda falls into the vinegar.",
+                        "Observe the bubbling and any expansion of the balloon."
+                    ],
+                    "safety_notes": [
+                        "Do not drink the mixture.",
+                        "Use only small quantities.",
+                        "Keep the bottle pointed away from the face.",
+                        "Clean spills after the activity."
+                    ],
+                    "concept_explanation": "When an acid reacts with a base, a chemical reaction occurs. In this case, carbon dioxide gas is produced. The bubbling and balloon inflation show evidence of gas evolution in a simple acid-base reaction.",
+                    "diagram_hint": "Draw a bottle containing vinegar with a balloon attached at the top. Show baking soda falling in and gas expanding the balloon.",
+                    "quiz": [
+                        {
+                            "question": "What showed that a gas was produced?",
+                            "options": [
+                                "The balloon expanded",
+                                "The bottle melted",
+                                "The vinegar disappeared",
+                                "The spoon changed shape"
+                            ],
+                            "answer": "The balloon expanded",
+                            "explanation": "The balloon grew because gas produced in the reaction collected inside it."
+                        },
+                        {
+                            "question": "Which gas is formed in this experiment?",
+                            "options": [
+                                "Carbon dioxide",
+                                "Oxygen",
+                                "Hydrogen",
+                                "Nitrogen"
+                            ],
+                            "answer": "Carbon dioxide",
+                            "explanation": "Vinegar and baking soda react to release carbon dioxide gas."
+                        },
+                        {
+                            "question": "What type of reaction is shown here?",
+                            "options": [
+                                "Acid-base reaction",
+                                "Magnetic reaction",
+                                "Nuclear reaction",
+                                "Melting reaction"
+                            ],
+                            "answer": "Acid-base reaction",
+                            "explanation": "Vinegar is acidic and baking soda acts as a base."
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "topic_id": "separation_techniques",
+            "topic_name": "Separation Techniques",
+            "experiments": [
+                {
+                    "id": "exp_005",
+                    "title": "Homemade Water Filter",
+                    "subject_id": "chemistry",
+                    "subject_name": "Chemistry",
+                    "short_description": "Build a simple filter to show how layers of material can remove visible dirt from water.",
+                    "materials": [
+                        "1 empty plastic bottle",
+                        "Scissors",
+                        "Cotton or clean cloth",
+                        "Fine sand",
+                        "Small stones or gravel",
+                        "Dirty water made with soil and water",
+                        "Container for filtered water"
+                    ],
+                    "local_alternatives": [
+                        "Use a clean sachet water bag holder or funnel if no bottle is available",
+                        "Use clean fabric instead of cotton",
+                        "Use washed local sand and small stones",
+                        "Use crushed clean charcoal as an extra layer if available"
+                    ],
+                    "instructions": [
+                        "Cut the plastic bottle into two parts.",
+                        "Turn the top part upside down like a funnel.",
+                        "Place cotton or clean cloth at the neck of the bottle.",
+                        "Add a layer of fine sand above the cloth.",
+                        "Add a layer of small stones or gravel on top.",
+                        "Pour dirty water slowly into the filter.",
+                        "Collect the filtered water below and compare it with the original dirty water.",
+                        "Explain that the filtered water should not be drunk unless later boiled or properly treated."
+                    ],
+                    "safety_notes": [
+                        "Do not drink the filtered water from this experiment.",
+                        "Wash sand and stones before use.",
+                        "Handle scissors carefully.",
+                        "Wash hands after handling dirty water."
+                    ],
+                    "concept_explanation": "Filtration removes visible dirt and suspended particles from water, but it may not remove germs. Different layers trap different particle sizes. This helps students understand filtration as a separation technique and the limits of simple purification.",
+                    "diagram_hint": "Draw an upside-down bottle with layers from bottom to top: cloth, sand, and stones. Show dirty water entering at the top and clearer water coming out below.",
+                    "quiz": [
+                        {
+                            "question": "What does filtration mainly remove from water?",
+                            "options": [
+                                "Visible dirt particles",
+                                "All germs",
+                                "Salt dissolved in water",
+                                "Water color only"
+                            ],
+                            "answer": "Visible dirt particles",
+                            "explanation": "Simple filtration removes suspended particles but not all microorganisms or dissolved substances."
+                        },
+                        {
+                            "question": "Why is cloth or cotton placed at the bottom of the filter?",
+                            "options": [
+                                "To hold back sand and fine dirt",
+                                "To add smell",
+                                "To increase heat",
+                                "To change the taste"
+                            ],
+                            "answer": "To hold back sand and fine dirt",
+                            "explanation": "The cloth prevents the filtering materials and very fine dirt from passing through quickly."
+                        },
+                        {
+                            "question": "Is the filtered water always safe to drink immediately?",
+                            "options": [
+                                "No, not always",
+                                "Yes, always",
+                                "Yes, if it looks clear",
+                                "Yes, if stones were used"
+                            ],
+                            "answer": "No, not always",
+                            "explanation": "The water may look clearer but can still contain germs, so more treatment may be needed."
+                        }
+                    ]
+                },
+                {
+                    "id": "exp_006",
+                    "title": "Evaporation and Salt Recovery",
+                    "subject_id": "chemistry",
+                    "subject_name": "Chemistry",
+                    "short_description": "Recover dissolved salt from salt water by allowing the water to evaporate.",
+                    "materials": [
+                        "Salt",
+                        "Water",
+                        "Transparent plate or shallow bowl",
+                        "Spoon"
+                    ],
+                    "local_alternatives": [
+                        "Use a clean tray or saucer",
+                        "Use sea salt or cooking salt",
+                        "Place in sunlight instead of heating"
+                    ],
+                    "instructions": [
+                        "Mix salt into water until it dissolves.",
+                        "Pour some of the salt solution into a shallow plate.",
+                        "Place the plate in a sunny, safe place.",
+                        "Wait for the water to reduce or disappear over time.",
+                        "Observe the salt crystals left behind."
+                    ],
+                    "safety_notes": [
+                        "Do not place the setup where it can be knocked over.",
+                        "Do not use fire for this beginner version.",
+                        "Wash the plate after the experiment."
+                    ],
+                    "concept_explanation": "When a solution is left to evaporate, the liquid solvent can leave behind the dissolved solid. This introduces evaporation and simple crystallization as separation methods used in chemistry.",
+                    "diagram_hint": "Draw a shallow dish containing salt solution in sunlight, then show a second dish with less water and salt crystals remaining.",
+                    "quiz": [
+                        {
+                            "question": "What left the salt behind in the dish?",
+                            "options": [
+                                "Evaporation of water",
+                                "Magnetism",
+                                "Filtering by cloth",
+                                "Cooling only"
+                            ],
+                            "answer": "Evaporation of water",
+                            "explanation": "As the water evaporates, the dissolved salt remains behind."
+                        },
+                        {
+                            "question": "What was recovered at the end?",
+                            "options": [
+                                "Salt",
+                                "Sand",
+                                "Soap",
+                                "Plastic"
+                            ],
+                            "answer": "Salt",
+                            "explanation": "The dissolved salt stayed behind after the water was lost."
+                        },
+                        {
+                            "question": "Which separation method is shown here?",
+                            "options": [
+                                "Evaporation",
+                                "Sedimentation",
+                                "Magnetic separation",
+                                "Decantation"
+                            ],
+                            "answer": "Evaporation",
+                            "explanation": "The method uses loss of the liquid solvent to separate the dissolved solid."
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "topic_id": "air_pressure",
+            "topic_name": "Air Pressure",
+            "experiments": [
+                {
+                    "id": "exp_007",
+                    "title": "Upside-Down Water Cup",
+                    "subject_id": "physics",
+                    "subject_name": "Physics",
+                    "short_description": "See how air pressure can hold water in a cup when it is turned upside down.",
+                    "materials": [
+                        "1 transparent cup",
+                        "Water",
+                        "A flat piece of stiff paper or cardboard",
+                        "Tray or basin"
+                    ],
+                    "local_alternatives": [
+                        "Use an old plastic drinking cup",
+                        "Use a smooth notebook cover instead of cardboard",
+                        "Do the activity over a bucket if no tray is available"
+                    ],
+                    "instructions": [
+                        "Fill the cup almost to the top with water.",
+                        "Place the stiff paper over the mouth of the cup.",
+                        "Hold the paper firmly in place with your hand.",
+                        "Turn the cup upside down over a tray or basin.",
+                        "Slowly remove your hand from the paper while keeping the cup steady.",
+                        "Observe what happens to the paper and the water."
+                    ],
+                    "safety_notes": [
+                        "Do the experiment over a tray, basin, or outside to avoid slipping on spilled water.",
+                        "Use a plastic cup if possible to avoid breakage.",
+                        "Move slowly so the cup does not fall."
+                    ],
+                    "concept_explanation": "Air has pressure even though we cannot see it. When the cup is turned upside down, the air pushing upward on the paper can be strong enough to hold the water in the cup. This helps explain that air exerts force.",
+                    "diagram_hint": "Show a cup full of water turned upside down with a flat card covering the opening and water remaining inside.",
+                    "quiz": [
+                        {
+                            "question": "What mainly keeps the paper in place under the cup?",
+                            "options": [
+                                "Air pressure",
+                                "Heat from the water",
+                                "Magnetism",
+                                "Light from the room"
+                            ],
+                            "answer": "Air pressure",
+                            "explanation": "The air outside pushes upward on the paper and supports it."
+                        },
+                        {
+                            "question": "Why is it better to do this experiment over a tray?",
+                            "options": [
+                                "To catch any spilled water",
+                                "To measure the air",
+                                "To make the water warmer",
+                                "To change the color of the water"
+                            ],
+                            "answer": "To catch any spilled water",
+                            "explanation": "A tray helps keep the area safe and clean if water spills."
+                        },
+                        {
+                            "question": "What does this experiment show?",
+                            "options": [
+                                "Air takes up space and can push",
+                                "Water disappears quickly",
+                                "Paper turns into plastic",
+                                "Cups create electricity"
+                            ],
+                            "answer": "Air takes up space and can push",
+                            "explanation": "The experiment demonstrates that air exerts pressure and can apply force."
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "topic_id": "density",
+            "topic_name": "Density",
+            "experiments": [
+                {
+                    "id": "exp_008",
+                    "title": "Floating Egg in Salt Water",
+                    "subject_id": "physics",
+                    "subject_name": "Physics",
+                    "short_description": "Compare how an egg behaves in plain water and salt water to learn about density.",
+                    "materials": [
+                        "2 transparent cups or jars",
+                        "Water",
+                        "1 raw egg",
+                        "Salt",
+                        "Spoon"
+                    ],
+                    "local_alternatives": [
+                        "Use any clear container",
+                        "Use table salt or local cooking salt",
+                        "Use a small potato piece if an egg is not available, though the effect may be less clear"
+                    ],
+                    "instructions": [
+                        "Fill both cups with the same amount of water.",
+                        "Place the egg gently into the first cup of plain water and observe.",
+                        "Add several spoonfuls of salt to the second cup and stir well.",
+                        "Place the egg gently into the salt water and observe again.",
+                        "Compare the position of the egg in both cups.",
+                        "Discuss why the egg behaved differently."
+                    ],
+                    "safety_notes": [
+                        "Handle the egg carefully so it does not break.",
+                        "Wash hands after touching raw egg.",
+                        "Clean any spills immediately.",
+                        "Do not drink the water used in the experiment."
+                    ],
+                    "concept_explanation": "An object floats better in a liquid with higher density. Salt water is denser than plain water, so it provides a greater upward force on the egg. This introduces density, upthrust, and flotation.",
+                    "diagram_hint": "Draw two cups side by side. In the first, show the egg lower in plain water. In the second, show the egg higher or floating in salt water.",
+                    "quiz": [
+                        {
+                            "question": "Why does the egg rise more in salt water?",
+                            "options": [
+                                "Salt water is denser",
+                                "Salt water is hotter",
+                                "The egg becomes lighter",
+                                "The cup becomes bigger"
+                            ],
+                            "answer": "Salt water is denser",
+                            "explanation": "The denser liquid produces greater upthrust on the egg."
+                        },
+                        {
+                            "question": "What happened in plain water?",
+                            "options": [
+                                "The egg stayed near the bottom",
+                                "The egg floated higher",
+                                "The egg disappeared",
+                                "The water turned solid"
+                            ],
+                            "answer": "The egg stayed near the bottom",
+                            "explanation": "Plain water is less dense and provides less upward force."
+                        },
+                        {
+                            "question": "Which science idea does this experiment mainly show?",
+                            "options": [
+                                "Density",
+                                "Magnetism",
+                                "Photosynthesis",
+                                "Sound"
+                            ],
+                            "answer": "Density",
+                            "explanation": "The activity compares how density affects sinking and floating."
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "topic_id": "heat",
+            "topic_name": "Heat",
+            "experiments": [
+                {
+                    "id": "exp_009",
+                    "title": "Expansion of Air in a Bottle",
+                    "subject_id": "physics",
+                    "subject_name": "Physics",
+                    "short_description": "Observe how warming air can expand and affect a balloon placed over a bottle.",
+                    "materials": [
+                        "Empty plastic bottle",
+                        "Balloon",
+                        "Bowl of warm water",
+                        "Bowl of cooler water"
+                    ],
+                    "local_alternatives": [
+                        "Use any small plastic drink bottle",
+                        "Use gently warm water from the tap or sun-warmed water",
+                        "Use a latex glove finger if a balloon is not available"
+                    ],
+                    "instructions": [
+                        "Stretch the balloon over the mouth of the empty bottle.",
+                        "Place the bottle in a bowl of warm water.",
+                        "Observe any change in the balloon.",
+                        "Move the bottle into cooler water and observe again.",
+                        "Compare the size of the balloon in both conditions."
+                    ],
+                    "safety_notes": [
+                        "Use warm water, not boiling water.",
+                        "Keep water away from electric devices.",
+                        "Do not put your face directly over the balloon."
+                    ],
+                    "concept_explanation": "When air is heated, its particles move faster and spread out more, causing the air to expand. When air cools, it contracts. This simple activity links heat to expansion in gases.",
+                    "diagram_hint": "Draw a bottle with a balloon on top placed in warm water, then a second drawing in cooler water with the balloon smaller.",
+                    "quiz": [
+                        {
+                            "question": "Why did the balloon get bigger in warm water?",
+                            "options": [
+                                "The air in the bottle expanded",
+                                "The bottle made new air",
+                                "The water entered the balloon",
+                                "The balloon became heavier"
+                            ],
+                            "answer": "The air in the bottle expanded",
+                            "explanation": "Heating the air makes it expand and push into the balloon."
+                        },
+                        {
+                            "question": "What happens when the bottle is moved to cooler water?",
+                            "options": [
+                                "The balloon becomes smaller",
+                                "The balloon bursts immediately",
+                                "The bottle melts",
+                                "Nothing changes"
+                            ],
+                            "answer": "The balloon becomes smaller",
+                            "explanation": "Cooling causes the air to contract, reducing the balloon size."
+                        },
+                        {
+                            "question": "Which idea is mainly shown?",
+                            "options": [
+                                "Gases expand when heated",
+                                "Water turns into salt",
+                                "Light bends in water",
+                                "Magnets attract plastic"
+                            ],
+                            "answer": "Gases expand when heated",
+                            "explanation": "The experiment demonstrates thermal expansion of air."
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "topic_id": "magnetism",
+            "topic_name": "Magnetism",
+            "experiments": [
+                {
+                    "id": "exp_010",
+                    "title": "Homemade Compass",
+                    "subject_id": "physics",
+                    "subject_name": "Physics",
+                    "short_description": "Magnetize a needle and float it on water to show how it aligns in a north-south direction.",
+                    "materials": [
+                        "Needle or small pin",
+                        "Small magnet",
+                        "Leaf piece, foam piece, or bottle-cap float",
+                        "Bowl of water"
+                    ],
+                    "local_alternatives": [
+                        "Use a sewing needle or straight pin",
+                        "Use any small fridge magnet",
+                        "Use a tiny piece of cork, foam, or dry leaf to float the needle"
+                    ],
+                    "instructions": [
+                        "Stroke the needle with the magnet several times in one direction.",
+                        "Place the magnetized needle carefully on a small floating material.",
+                        "Gently place the float on still water in a bowl.",
+                        "Observe the direction in which the needle settles.",
+                        "Turn the bowl slightly and observe again."
+                    ],
+                    "safety_notes": [
+                        "Handle the needle carefully.",
+                        "Do not leave sharp objects where children can step on them.",
+                        "Keep magnets away from delicate electronic devices."
+                    ],
+                    "concept_explanation": "A magnetized needle aligns itself with Earth's magnetic field. This principle is used in a compass. The activity introduces magnetic materials, magnetization, and direction finding.",
+                    "diagram_hint": "Draw a bowl of water with a small floating piece carrying a needle aligned horizontally. Add labels for north and south.",
+                    "quiz": [
+                        {
+                            "question": "Why did the needle settle in one main direction?",
+                            "options": [
+                                "It aligned with Earth's magnetic field",
+                                "The water pulled it by color",
+                                "The bowl rotated it by heat",
+                                "The leaf became magnetic"
+                            ],
+                            "answer": "It aligned with Earth's magnetic field",
+                            "explanation": "A magnetized needle behaves like a simple compass and points north-south."
+                        },
+                        {
+                            "question": "What was used to magnetize the needle?",
+                            "options": [
+                                "A magnet",
+                                "A spoon",
+                                "Salt water",
+                                "A battery"
+                            ],
+                            "answer": "A magnet",
+                            "explanation": "Rubbing the needle with a magnet helps align magnetic domains in the metal."
+                        },
+                        {
+                            "question": "What practical device does this experiment imitate?",
+                            "options": [
+                                "Compass",
+                                "Thermometer",
+                                "Barometer",
+                                "Filter funnel"
+                            ],
+                            "answer": "Compass",
+                            "explanation": "The setup works on the same principle as a compass."
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "topic_id": "light",
+            "topic_name": "Light",
+            "experiments": [
+                {
+                    "id": "exp_011",
+                    "title": "Refraction with Pencil in Water",
+                    "subject_id": "physics",
+                    "subject_name": "Physics",
+                    "short_description": "Observe how light bends when it passes from air into water.",
+                    "materials": [
+                        "Transparent cup or glass",
+                        "Water",
+                        "Pencil or straight straw"
+                    ],
+                    "local_alternatives": [
+                        "Use any clear cup or jar",
+                        "Use a stick or straight pen cover if a pencil is not available"
+                    ],
+                    "instructions": [
+                        "Fill the transparent cup partly with water.",
+                        "Place the pencil slanting inside the water.",
+                        "Look at the pencil from the side.",
+                        "Observe how the pencil appears at the water surface.",
+                        "Remove the pencil and compare the view."
+                    ],
+                    "safety_notes": [
+                        "Use a plastic cup if possible.",
+                        "Avoid spilling water on books or sockets.",
+                        "Do not use broken glass."
+                    ],
+                    "concept_explanation": "Light changes speed when it moves from one medium to another, such as from air to water. Because of this, the path of light bends. This makes the pencil look bent even though it is straight. The effect is called refraction.",
+                    "diagram_hint": "Draw a cup of water with a pencil partly inside. Show a light ray bending at the water surface and the pencil appearing bent.",
+                    "quiz": [
+                        {
+                            "question": "Why does the pencil appear bent in water?",
+                            "options": [
+                                "Light bends at the water surface",
+                                "The pencil becomes soft",
+                                "The cup changes shape",
+                                "The water pulls the pencil sideways"
+                            ],
+                            "answer": "Light bends at the water surface",
+                            "explanation": "The bending of light between air and water changes the apparent position of the pencil."
+                        },
+                        {
+                            "question": "What is this effect called?",
+                            "options": [
+                                "Refraction",
+                                "Reflection",
+                                "Magnetism",
+                                "Evaporation"
+                            ],
+                            "answer": "Refraction",
+                            "explanation": "Refraction is the bending of light when it moves between different media."
+                        },
+                        {
+                            "question": "Which two media are involved here?",
+                            "options": [
+                                "Air and water",
+                                "Water and sand",
+                                "Metal and plastic",
+                                "Wood and cloth"
+                            ],
+                            "answer": "Air and water",
+                            "explanation": "The light passes from air into water and bends at the boundary."
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "topic_id": "plants",
+            "topic_name": "Plants",
+            "experiments": [
+                {
+                    "id": "exp_012",
+                    "title": "Water Movement in a Plant Stem",
+                    "subject_id": "biology",
+                    "subject_name": "Biology",
+                    "short_description": "Observe how colored water moves through a plant stem to show transport in plants.",
+                    "materials": [
+                        "Clear cup or bottle",
+                        "Water",
+                        "Food coloring or diluted safe dye",
+                        "White flower or fresh celery stalk with leaves",
+                        "Knife or scissors for adult use"
+                    ],
+                    "local_alternatives": [
+                        "Use scent leaf stalk, celery, or any pale-stem plant",
+                        "Use beetroot water or safe colored drink as a dye",
+                        "Use a transparent bottle if a cup is not available"
+                    ],
+                    "instructions": [
+                        "Fill a clear cup with water.",
+                        "Add a little food coloring or safe diluted dye.",
+                        "Place the plant stem or white flower into the colored water.",
+                        "Leave it for some hours or overnight.",
+                        "Observe any color change in the stem, veins, or petals.",
+                        "Discuss how the water moved through the plant."
+                    ],
+                    "safety_notes": [
+                        "An adult should handle the knife or scissors if cutting the stem.",
+                        "Do not drink the colored water.",
+                        "Wash hands after handling dye.",
+                        "Keep the setup away from books and clothing to avoid stains."
+                    ],
+                    "concept_explanation": "Plants transport water through tubes called xylem. The colored water makes this movement easier to observe. The activity helps students understand plant transport systems and movement of water from the base upward.",
+                    "diagram_hint": "Draw a cup with colored water and a plant stem inside it. Add arrows moving upward through the stem to the leaves or petals.",
+                    "quiz": [
+                        {
+                            "question": "What moved upward through the plant stem?",
+                            "options": [
+                                "Colored water",
+                                "Air only",
+                                "Soil",
+                                "Heat"
+                            ],
+                            "answer": "Colored water",
+                            "explanation": "The dye helps us see the movement of water up the stem."
+                        },
+                        {
+                            "question": "Which plant part carries water upward?",
+                            "options": [
+                                "Xylem vessels",
+                                "Flower only",
+                                "Root hair only",
+                                "Seeds"
+                            ],
+                            "answer": "Xylem vessels",
+                            "explanation": "Xylem is the tissue responsible for water transport."
+                        },
+                        {
+                            "question": "Why is color added to the water?",
+                            "options": [
+                                "To help us see water movement",
+                                "To make the plant sweeter",
+                                "To stop growth",
+                                "To dry the stem"
+                            ],
+                            "answer": "To help us see water movement",
+                            "explanation": "The color serves as a marker to trace the path of water."
+                        }
+                    ]
+                },
+                {
+                    "id": "exp_013",
+                    "title": "Seed Germination in Wet Cotton",
+                    "subject_id": "biology",
+                    "subject_name": "Biology",
+                    "short_description": "Observe how seeds sprout under suitable conditions of moisture and air.",
+                    "materials": [
+                        "Beans or maize seeds",
+                        "Cotton wool or tissue paper",
+                        "Small transparent container",
+                        "Water"
+                    ],
+                    "local_alternatives": [
+                        "Use any healthy local seeds such as beans, peas, or maize",
+                        "Use a bottle cover or small bowl as container",
+                        "Use clean cloth instead of cotton"
+                    ],
+                    "instructions": [
+                        "Place wet cotton or tissue in the container.",
+                        "Put a few seeds on top.",
+                        "Keep the cotton moist but not flooded.",
+                        "Place the setup where it gets air and moderate light.",
+                        "Observe daily for swelling, splitting, and root or shoot growth.",
+                        "Record the changes over several days."
+                    ],
+                    "safety_notes": [
+                        "Do not allow the setup to become moldy indoors for too long.",
+                        "Wash hands after handling old wet cotton.",
+                        "Use clean seeds and clean water."
+                    ],
+                    "concept_explanation": "Seeds need water, air, and suitable temperature to germinate. During germination, the seed absorbs water, swells, and begins growth. This helps students connect plant development to environmental conditions.",
+                    "diagram_hint": "Draw a container with wet cotton and seeds on top. Show later stages with a root and a shoot emerging from the seed.",
+                    "quiz": [
+                        {
+                            "question": "What do seeds need to germinate?",
+                            "options": [
+                                "Water, air, and suitable temperature",
+                                "Only sunlight",
+                                "Only soil",
+                                "Only fertilizer"
+                            ],
+                            "answer": "Water, air, and suitable temperature",
+                            "explanation": "These are the main conditions needed for most seeds to germinate."
+                        },
+                        {
+                            "question": "What usually appears first from the seed?",
+                            "options": [
+                                "Root",
+                                "Flower",
+                                "Fruit",
+                                "Leaf color"
+                            ],
+                            "answer": "Root",
+                            "explanation": "The root usually emerges first to anchor the young plant and absorb water."
+                        },
+                        {
+                            "question": "Why should the cotton be moist and not flooded?",
+                            "options": [
+                                "Seeds need air as well as water",
+                                "To make the seed heavier",
+                                "To remove the seed coat color",
+                                "To stop germination"
+                            ],
+                            "answer": "Seeds need air as well as water",
+                            "explanation": "Too much water can reduce air supply and slow or stop germination."
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "topic_id": "osmosis",
+            "topic_name": "Osmosis",
+            "experiments": [
+                {
+                    "id": "exp_014",
+                    "title": "Potato Osmosis Test",
+                    "subject_id": "biology",
+                    "subject_name": "Biology",
+                    "short_description": "Use potato pieces in plain water and salty water to observe movement of water across cell membranes.",
+                    "materials": [
+                        "1 potato",
+                        "2 cups",
+                        "Water",
+                        "Salt",
+                        "Knife for adult use"
+                    ],
+                    "local_alternatives": [
+                        "Use yam or cucumber pieces if potato is not available",
+                        "Use any two small transparent containers"
+                    ],
+                    "instructions": [
+                        "Cut two similar potato strips or cubes.",
+                        "Fill one cup with plain water and the other with salty water.",
+                        "Place one potato piece in each cup.",
+                        "Leave them for some hours.",
+                        "Remove the pieces and compare their firmness."
+                    ],
+                    "safety_notes": [
+                        "An adult should handle the knife.",
+                        "Do not drink the solutions after the experiment.",
+                        "Clean the work area after use."
+                    ],
+                    "concept_explanation": "Osmosis is the movement of water through a partially permeable membrane from a region of higher water concentration to lower water concentration. In plain water, potato cells may absorb water and become firmer. In salty water, they may lose water and become softer.",
+                    "diagram_hint": "Draw two cups labeled plain water and salt water, each containing a potato strip. Show arrows for water moving into one strip and out of the other.",
+                    "quiz": [
+                        {
+                            "question": "Which potato piece is likely to become firmer?",
+                            "options": [
+                                "The one in plain water",
+                                "The one in salty water",
+                                "Both stay exactly the same",
+                                "Neither changes at all"
+                            ],
+                            "answer": "The one in plain water",
+                            "explanation": "Water tends to move into the potato cells from the more dilute solution."
+                        },
+                        {
+                            "question": "What process is shown in this experiment?",
+                            "options": [
+                                "Osmosis",
+                                "Combustion",
+                                "Magnetization",
+                                "Distillation"
+                            ],
+                            "answer": "Osmosis",
+                            "explanation": "The experiment shows movement of water through cell membranes."
+                        },
+                        {
+                            "question": "Why does the potato in salt water become softer?",
+                            "options": [
+                                "It loses water to the surrounding solution",
+                                "It gains extra starch",
+                                "It becomes hotter",
+                                "Salt turns it into plastic"
+                            ],
+                            "answer": "It loses water to the surrounding solution",
+                            "explanation": "Water moves out of the potato cells into the saltier solution."
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "topic_id": "motion",
+            "topic_name": "Motion",
+            "experiments": [
+                {
+                    "id": "exp_015",
+                    "title": "Toy Car Ramp Investigation",
+                    "subject_id": "physics",
+                    "subject_name": "Physics",
+                    "short_description": "Compare how far a toy car moves when released from different ramp heights.",
+                    "materials": [
+                        "Toy car or bottle-cap car",
+                        "Cardboard or wooden board as ramp",
+                        "Books or blocks",
+                        "Ruler or tape measure",
+                        "Chalk or masking tape"
+                    ],
+                    "local_alternatives": [
+                        "Use a homemade bottle-cap car",
+                        "Use a tray or smooth board as a ramp",
+                        "Use stacked notebooks to change the ramp height"
+                    ],
+                    "instructions": [
+                        "Set up a ramp using a board and one book.",
+                        "Release the car from the same point without pushing it.",
+                        "Measure how far it travels on the floor.",
+                        "Repeat and record the result.",
+                        "Increase the ramp height with more books.",
+                        "Release the car again and compare the distance travelled."
+                    ],
+                    "safety_notes": [
+                        "Use the ramp on a clear floor space.",
+                        "Do not allow anyone to trip over the setup.",
+                        "Keep fingers away from rolling wheels on sloped boards."
+                    ],
+                    "concept_explanation": "A higher ramp gives the car more gravitational potential energy, which changes into kinetic energy as it moves. The activity helps students observe how height can affect speed and distance in motion experiments.",
+                    "diagram_hint": "Draw a sloping ramp with a car at the top. Show one low ramp and one higher ramp, with arrows indicating a longer travel distance from the higher ramp.",
+                    "quiz": [
+                        {
+                            "question": "What usually happens when the ramp height increases?",
+                            "options": [
+                                "The car usually travels farther",
+                                "The car disappears",
+                                "The floor becomes softer",
+                                "The ruler gets shorter"
+                            ],
+                            "answer": "The car usually travels farther",
+                            "explanation": "A greater ramp height often gives the car more speed and a longer travel distance."
+                        },
+                        {
+                            "question": "Why should the car be released from the same point each time?",
+                            "options": [
+                                "To make the test fair",
+                                "To confuse the measurement",
+                                "To change the wheel size",
+                                "To reduce the ramp length"
+                            ],
+                            "answer": "To make the test fair",
+                            "explanation": "Keeping the starting point the same helps ensure a fair comparison."
+                        },
+                        {
+                            "question": "What kind of investigation is this?",
+                            "options": [
+                                "Motion and distance comparison",
+                                "Acid-base testing",
+                                "Water purification",
+                                "Magnet sorting"
+                            ],
+                            "answer": "Motion and distance comparison",
+                            "explanation": "The experiment studies how ramp height affects motion."
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
