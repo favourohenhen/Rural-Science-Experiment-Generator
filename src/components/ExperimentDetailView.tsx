@@ -3,6 +3,7 @@
 // All fields are null-safe with friendly fallback messages.
 
 import type { FlatExperiment } from '../types'
+import LabComparison from './LabComparison'
 
 interface Props {
   experiment: FlatExperiment
@@ -137,6 +138,9 @@ function ExperimentDetailView({ experiment, onClose }: Props) {
             fallback="No local alternatives listed."
           />
         </section>
+
+        {/* Stage 4: Local vs Lab comparison */}
+        <LabComparison experiment={experiment} />
 
         {/* Instructions */}
         <section>
