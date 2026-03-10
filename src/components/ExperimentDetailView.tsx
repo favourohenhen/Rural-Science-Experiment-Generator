@@ -6,10 +6,14 @@ import type { FlatExperiment } from '../types'
 import LabComparison from './LabComparison'
 import ConceptTeaching from './ConceptTeaching'
 import ExamPractice from './ExamPractice'
+import { downloadExperiment } from '../utils/downloadExperiment'
 
 interface Props {
   experiment: FlatExperiment
   onClose: () => void
+  isSaved: boolean
+  onSave: () => void
+  onRemove: () => void
 }
 
 // Helper: renders a simple bulleted list, or a fallback if the list is empty.
@@ -48,7 +52,7 @@ function NumberedList({ items, fallback }: { items?: string[]; fallback: string 
   )
 }
 
-function ExperimentDetailView({ experiment, onClose }: Props) {
+function ExperimentDetailView({ experiment, onClose, isSaved, onSave, onRemove }: Props) {
   const {
     title,
     subject_name,
@@ -84,13 +88,28 @@ function ExperimentDetailView({ experiment, onClose }: Props) {
             )}
           </div>
         </div>
-        <button
-          onClick={onClose}
-          className="shrink-0 bg-amber-800 hover:bg-amber-900 text-white text-sm font-medium px-3 py-1.5 rounded-lg transition-colors duration-150"
-          aria-label="Close experiment detail"
-        >
-          ✕ Close
-        </button>
+        {/* Save toggle + Close button */}
+        <div className="flex items-center gap-2 shrink-0">
+          <button
+            type="button"
+            onClick={isSaved ? onRemove : onSave}
+            className={`text-sm font-medium px-3 py-1.5 rounded-lg transition-colors duration-150 ${
+              isSaved
+                ? 'bg-amber-200 text-amber-900 hover:bg-amber-300'
+                : 'bg-amber-800 hover:bg-amber-900 text-white'
+            }`}
+            aria-label={isSaved ? 'Remove from saved' : 'Save this experiment'}
+          >
+            {isSaved ? '🔖 Saved' : '🔖 Save'}
+          </button>
+          <button
+            onClick={onClose}
+            className="shrink-0 bg-amber-800 hover:bg-amber-900 text-white text-sm font-medium px-3 py-1.5 rounded-lg transition-colors duration-150"
+            aria-label="Close experiment detail"
+          >
+            ✕ Close
+          </button>
+        </div>
       </div>
 
       {/* ── Body ─────────────────────────────────────────────────────────── */}
@@ -160,13 +179,20 @@ function ExperimentDetailView({ experiment, onClose }: Props) {
         {/* Stage 6: Interactive exam practice (replaces static quiz preview) */}
         <ExamPractice experiment={experiment} />
 
-        {/* Close button at the bottom */}
-        <div className="pt-2 border-t border-stone-100">
+        {/* Close / Download action row */}
+        <div className="pt-2 border-t border-stone-100 flex flex-wrap items-center justify-between gap-3">
           <button
             onClick={onClose}
             className="text-sm text-amber-700 hover:text-amber-900 font-medium transition-colors duration-150"
           >
             ← Back to experiment list
+          </button>
+          <button
+            type="button"
+            onClick={() => downloadExperiment(experiment)}
+            className="text-sm font-medium px-4 py-1.5 rounded-lg border border-stone-200 text-stone-600 hover:bg-stone-50 transition-colors duration-150"
+          >
+            ⬇ Download as Text
           </button>
         </div>
 

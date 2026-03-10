@@ -8,6 +8,8 @@ import type { Subject, Topic, FlatExperiment } from '../types'
 import FilterBar from './FilterBar'
 import ExperimentBrowseCard from './ExperimentBrowseCard'
 import ExperimentDetailView from './ExperimentDetailView'
+import SavedExperiments from './SavedExperiments'
+import { useSavedExperiments } from '../hooks/useSavedExperiments'
 
 interface Props {
   subjects: Subject[]
@@ -22,6 +24,9 @@ function BrowseExperiments({ subjects, topics }: Props) {
 
   // ─── Selected experiment state (Stage 3) ─────────────────────────────────────
   const [selectedExperiment, setSelectedExperiment] = useState<FlatExperiment | null>(null)
+
+  // ─── Saved experiments (Stage 7) ─────────────────────────────────────────────
+  const { saved, isSaved, saveExperiment, removeExperiment } = useSavedExperiments()
 
   // Ref used to scroll to the detail view after selecting an experiment.
   const detailRef = useRef<HTMLDivElement>(null)
@@ -69,6 +74,13 @@ function BrowseExperiments({ subjects, topics }: Props) {
           Filter by subject, topic, or search by title. Click any card to see full details.
         </p>
 
+        {/* Stage 7: Saved experiments section — shown above the filter bar */}
+        <SavedExperiments
+          saved={saved}
+          onOpen={handleSelect}
+          onRemove={removeExperiment}
+        />
+
         {/* Filter bar */}
         <div className="bg-white border border-stone-200 rounded-xl p-5 mb-6 shadow-sm">
           <FilterBar
@@ -115,6 +127,9 @@ function BrowseExperiments({ subjects, topics }: Props) {
             <ExperimentDetailView
               experiment={selectedExperiment}
               onClose={handleClose}
+              isSaved={isSaved(selectedExperiment.id)}
+              onSave={() => saveExperiment(selectedExperiment)}
+              onRemove={() => removeExperiment(selectedExperiment.id)}
             />
           ) : (
             <div className="mt-8 text-center py-10 border-2 border-dashed border-stone-200 rounded-2xl text-stone-400">
