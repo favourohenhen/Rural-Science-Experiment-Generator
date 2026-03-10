@@ -4,6 +4,7 @@
 
 import type { FlatExperiment } from '../types'
 import LabComparison from './LabComparison'
+import ConceptTeaching from './ConceptTeaching'
 
 interface Props {
   experiment: FlatExperiment
@@ -56,8 +57,6 @@ function ExperimentDetailView({ experiment, onClose }: Props) {
     local_alternatives,
     instructions,
     safety_notes,
-    concept_explanation,
-    diagram_hint,
     quiz,
   } = experiment
 
@@ -153,27 +152,10 @@ function ExperimentDetailView({ experiment, onClose }: Props) {
           />
         </section>
 
-        {/* Concept explanation */}
+        {/* Stage 5: Improved concept teaching section (replaces old concept explanation + diagram hint) */}
         <section>
-          <h3 className="text-sm font-bold text-stone-500 uppercase tracking-wide mb-2">
-            💡 What You Are Learning
-          </h3>
-          <p className="text-sm text-stone-700 leading-relaxed bg-amber-50 border border-amber-100 rounded-lg p-4">
-            {concept_explanation || 'No concept explanation available.'}
-          </p>
+          <ConceptTeaching experiment={experiment} />
         </section>
-
-        {/* Diagram hint */}
-        {diagram_hint && (
-          <section>
-            <h3 className="text-sm font-bold text-stone-500 uppercase tracking-wide mb-2">
-              ✏️ Diagram Hint
-            </h3>
-            <p className="text-sm text-stone-600 italic border-l-4 border-amber-300 pl-4">
-              {diagram_hint}
-            </p>
-          </section>
-        )}
 
         {/* Quiz preview — static, no interactivity yet */}
         {quiz && quiz.length > 0 && (
