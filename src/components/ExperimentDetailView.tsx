@@ -5,6 +5,7 @@
 import type { FlatExperiment } from '../types'
 import LabComparison from './LabComparison'
 import ConceptTeaching from './ConceptTeaching'
+import ExamPractice from './ExamPractice'
 
 interface Props {
   experiment: FlatExperiment
@@ -57,7 +58,6 @@ function ExperimentDetailView({ experiment, onClose }: Props) {
     local_alternatives,
     instructions,
     safety_notes,
-    quiz,
   } = experiment
 
   return (
@@ -157,42 +157,8 @@ function ExperimentDetailView({ experiment, onClose }: Props) {
           <ConceptTeaching experiment={experiment} />
         </section>
 
-        {/* Quiz preview — static, no interactivity yet */}
-        {quiz && quiz.length > 0 && (
-          <section>
-            <h3 className="text-sm font-bold text-stone-500 uppercase tracking-wide mb-3">
-              🧠 Quiz Preview
-            </h3>
-            <div className="space-y-4">
-              {quiz.map((item, index) => (
-                <div
-                  key={index}
-                  className="bg-stone-50 border border-stone-200 rounded-lg p-4"
-                >
-                  <p className="text-sm font-semibold text-stone-800 mb-2">
-                    {index + 1}. {item.question}
-                  </p>
-                  <ul className="space-y-1">
-                    {(item.options ?? []).map((option, optIndex) => (
-                      <li
-                        key={optIndex}
-                        className="text-sm text-stone-600 flex gap-2"
-                      >
-                        <span className="text-stone-400 shrink-0">
-                          {String.fromCharCode(65 + optIndex)}.
-                        </span>
-                        {option}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              ))}
-            </div>
-            <p className="text-xs text-stone-400 italic mt-2">
-              Quiz interactivity coming in a future stage.
-            </p>
-          </section>
-        )}
+        {/* Stage 6: Interactive exam practice (replaces static quiz preview) */}
+        <ExamPractice experiment={experiment} />
 
         {/* Close button at the bottom */}
         <div className="pt-2 border-t border-stone-100">
