@@ -1,27 +1,31 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Explore safe science experiments using everyday materials. Designed for teachers and students in rural and low-bandwidth settings." />
-    <title>Rural Science Experiment Generator</title>
-    <!-- PWA manifest -->
-    <link rel="manifest" href="/manifest.json" />
-    <meta name="theme-color" content="#b45309" />
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-    <!-- Register service worker for offline support -->
-    <script>
-      if ('serviceWorker' in navigator) {
-        window.addEventListener('load', function () {
-          navigator.serviceWorker.register('/sw.js').catch(function () {
-            // SW registration failed — app still works normally online
-          })
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Explore safe science experiments using everyday materials. Designed for teachers and students in rural and low-bandwidth settings." />
+  <title>Rural Science Experiment Generator</title>
+  <!-- PWA manifest -->
+  <link rel="manifest" href="/manifest.json" />
+  <meta name="theme-color" content="#b45309" />
+</head>
+
+<body>
+  <div id="root"></div>
+  <script type="module" src="/src/main.tsx"></script>
+  <!-- Register service worker for offline support -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', function () {
+        navigator.serviceWorker.register('/sw.js').catch(function () {
+          // SW registration failed — app still works normally online
         })
-      }
-    </script>
-  </body>
+      })
+    }
+  </script>
+</body>
+
 </html>
