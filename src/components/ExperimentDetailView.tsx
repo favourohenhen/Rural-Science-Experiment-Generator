@@ -1,7 +1,8 @@
 // ExperimentDetailView — shows full details for a selected experiment.
 // Rendered inline below the card grid inside BrowseExperiments.
-// All fields are null-safe with friendly fallback messages.
+// Stage 8: Added badges to header, improved safety note callout, keyboard focus on heading.
 
+import { useRef, useEffect } from 'react'
 import type { FlatExperiment } from '../types'
 import LabComparison from './LabComparison'
 import ConceptTeaching from './ConceptTeaching'
@@ -25,7 +26,7 @@ function BulletList({ items, fallback }: { items?: string[]; fallback: string })
     <ul className="space-y-1">
       {items.map((item, index) => (
         <li key={index} className="text-sm text-stone-700 flex gap-2">
-          <span className="text-amber-500 mt-0.5 shrink-0">•</span>
+          <span className="text-amber-500 mt-0.5 shrink-0" aria-hidden="true">•</span>
           <span>{item}</span>
         </li>
       ))}
@@ -42,7 +43,7 @@ function NumberedList({ items, fallback }: { items?: string[]; fallback: string 
     <ol className="space-y-2">
       {items.map((step, index) => (
         <li key={index} className="text-sm text-stone-700 flex gap-3">
-          <span className="bg-amber-100 text-amber-800 font-bold text-xs rounded-full w-6 h-6 flex items-center justify-center shrink-0 mt-0.5">
+          <span className="bg-amber-100 text-amber-800 font-bold text-xs rounded-full w-6 h-6 flex items-center justify-center shrink-0 mt-0.5" aria-hidden="true">
             {index + 1}
           </span>
           <span className="leading-relaxed">{step}</span>
@@ -64,18 +65,31 @@ function ExperimentDetailView({ experiment, onClose, isSaved, onSave, onRemove }
     safety_notes,
   } = experiment
 
+  // Move keyboard focus to the detail heading when the view opens.
+  // This is simple and helpful: screen readers and keyboard users are
+  // immediately brought to the new content without over-engineering.
+  const headingRef = useRef<HTMLHeadingElement>(null)
+  useEffect(() => {
+    headingRef.current?.focus()
+  }, [experiment.id])
+
   return (
     <div
       id="experiment-detail"
       className="mt-8 bg-white border border-amber-200 rounded-2xl shadow-md overflow-hidden"
     >
       {/* ── Header bar ───────────────────────────────────────────────────── */}
-      <div className="bg-amber-700 text-white px-6 py-4 flex items-start justify-between gap-4">
-        <div>
-          <h2 className="text-xl font-bold leading-snug">
+      <div className="bg-amber-700 text-white px-4 sm:px-6 py-4 flex items-start justify-between gap-4">
+        <div className="min-w-0">
+          {/* Focus is moved here when the detail view opens */}
+          <h2
+            ref={headingRef}
+            tabIndex={-1}
+            className="text-lg sm:text-xl font-bold leading-snug focus:outline-none"
+          >
             {title || 'Untitled Experiment'}
           </h2>
-          <div className="flex flex-wrap gap-2 mt-2">
+          <div className="flex flex-wrap gap-1.5 mt-2">
             {subject_name && (
               <span className="bg-amber-900/40 text-amber-100 text-xs font-semibold px-2 py-0.5 rounded-full">
                 {subject_name}
@@ -86,8 +100,16 @@ function ExperimentDetailView({ experiment, onClose, isSaved, onSave, onRemove }
                 {topic_name}
               </span>
             )}
+            {/* Stage 8: attribute badges */}
+            <span className="bg-green-700/50 text-green-100 text-xs font-semibold px-2 py-0.5 rounded-full border border-green-600/40">
+              ✅ Safe
+            </span>
+            <span className="bg-blue-900/40 text-blue-100 text-xs font-semibold px-2 py-0.5 rounded-full border border-blue-600/40">
+              📝 WAEC-Friendly
+            </span>
           </div>
         </div>
+
         {/* Save toggle + Close button */}
         <div className="flex items-center gap-2 shrink-0">
           <button
@@ -103,6 +125,7 @@ function ExperimentDetailView({ experiment, onClose, isSaved, onSave, onRemove }
             {isSaved ? '🔖 Saved' : '🔖 Save'}
           </button>
           <button
+            type="button"
             onClick={onClose}
             className="shrink-0 bg-amber-800 hover:bg-amber-900 text-white text-sm font-medium px-3 py-1.5 rounded-lg transition-colors duration-150"
             aria-label="Close experiment detail"
@@ -113,7 +136,7 @@ function ExperimentDetailView({ experiment, onClose, isSaved, onSave, onRemove }
       </div>
 
       {/* ── Body ─────────────────────────────────────────────────────────── */}
-      <div className="px-6 py-6 space-y-7">
+      <div className="px-4 sm:px-6 py-6 space-y-7">
 
         {/* Short description */}
         {short_description && (
@@ -122,12 +145,15 @@ function ExperimentDetailView({ experiment, onClose, isSaved, onSave, onRemove }
           </section>
         )}
 
-        {/* Safety notes — highlighted warning box */}
-        <section>
-          <h3 className="text-sm font-bold text-red-700 uppercase tracking-wide mb-2">
-            ⚠️ Safety Notes
+        {/* Safety notes — prominent warning callout */}
+        <section aria-labelledby="safety-notes-heading">
+          <h3
+            id="safety-notes-heading"
+            className="text-sm font-bold text-red-700 uppercase tracking-wide mb-2 flex items-center gap-1.5"
+          >
+            <span aria-hidden="true">⚠️</span> Safety Notes
           </h3>
-          <div className="bg-red-50 border border-red-200 rounded-lg p-4">
+          <div className="bg-red-50 border-l-4 border-red-400 rounded-r-lg p-4">
             <BulletList
               items={safety_notes}
               fallback="No specific safety notes for this experiment."
@@ -171,17 +197,18 @@ function ExperimentDetailView({ experiment, onClose, isSaved, onSave, onRemove }
           />
         </section>
 
-        {/* Stage 5: Improved concept teaching section (replaces old concept explanation + diagram hint) */}
+        {/* Stage 5: Concept teaching */}
         <section>
           <ConceptTeaching experiment={experiment} />
         </section>
 
-        {/* Stage 6: Interactive exam practice (replaces static quiz preview) */}
+        {/* Stage 6: Exam practice */}
         <ExamPractice experiment={experiment} />
 
         {/* Close / Download action row */}
         <div className="pt-2 border-t border-stone-100 flex flex-wrap items-center justify-between gap-3">
           <button
+            type="button"
             onClick={onClose}
             className="text-sm text-amber-700 hover:text-amber-900 font-medium transition-colors duration-150"
           >

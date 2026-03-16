@@ -1,5 +1,5 @@
 // FilterBar — search input, subject filter buttons, and topic filter buttons.
-// All values are passed in as props; no internal state.
+// Stage 8: Added role/aria-labelledby to filter groups, type="button" on all filter buttons.
 
 import type { Subject, Topic } from '../types'
 
@@ -36,17 +36,21 @@ function FilterBar({
           type="text"
           value={searchQuery}
           onChange={(e) => onSearchChange(e.target.value)}
-          placeholder="Type a title to search..."
+          placeholder="Type a title to search…"
           className="w-full border border-stone-300 rounded-lg px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-amber-400 bg-white"
         />
       </div>
 
       {/* Subject filters */}
-      <div>
-        <p className="text-sm font-medium text-stone-600 mb-2">Filter by Subject</p>
+      <div role="group" aria-labelledby="subject-filter-label">
+        <p id="subject-filter-label" className="text-sm font-medium text-stone-600 mb-2">
+          Filter by Subject
+        </p>
         <div className="flex flex-wrap gap-2">
           <button
+            type="button"
             onClick={() => onSubjectChange('all')}
+            aria-pressed={selectedSubject === 'all'}
             className={`px-3 py-1.5 rounded-full text-sm font-medium border transition-colors duration-150 ${
               selectedSubject === 'all'
                 ? 'bg-amber-700 text-white border-amber-700'
@@ -58,7 +62,9 @@ function FilterBar({
           {(subjects ?? []).map((subject) => (
             <button
               key={subject.subject_id}
+              type="button"
               onClick={() => onSubjectChange(subject.subject_id)}
+              aria-pressed={selectedSubject === subject.subject_id}
               className={`px-3 py-1.5 rounded-full text-sm font-medium border transition-colors duration-150 ${
                 selectedSubject === subject.subject_id
                   ? 'bg-amber-700 text-white border-amber-700'
@@ -72,11 +78,15 @@ function FilterBar({
       </div>
 
       {/* Topic filters */}
-      <div>
-        <p className="text-sm font-medium text-stone-600 mb-2">Filter by Topic</p>
+      <div role="group" aria-labelledby="topic-filter-label">
+        <p id="topic-filter-label" className="text-sm font-medium text-stone-600 mb-2">
+          Filter by Topic
+        </p>
         <div className="flex flex-wrap gap-2">
           <button
+            type="button"
             onClick={() => onTopicChange('all')}
+            aria-pressed={selectedTopic === 'all'}
             className={`px-3 py-1.5 rounded-full text-sm font-medium border transition-colors duration-150 ${
               selectedTopic === 'all'
                 ? 'bg-amber-700 text-white border-amber-700'
@@ -88,7 +98,9 @@ function FilterBar({
           {(topics ?? []).map((topic) => (
             <button
               key={topic.topic_id}
+              type="button"
               onClick={() => onTopicChange(topic.topic_id)}
+              aria-pressed={selectedTopic === topic.topic_id}
               className={`px-3 py-1.5 rounded-full text-sm font-medium border transition-colors duration-150 ${
                 selectedTopic === topic.topic_id
                   ? 'bg-amber-700 text-white border-amber-700'

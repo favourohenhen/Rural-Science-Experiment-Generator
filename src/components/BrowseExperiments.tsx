@@ -1,7 +1,6 @@
 // BrowseExperiments — the main Stage 2 + Stage 3 section.
 // Holds filter state (search, subject, topic) and selected experiment state.
-// Stage 2: flattens + filters topics[].experiments[].
-// Stage 3: shows ExperimentDetailView inline below the card grid.
+// Stage 8: Improved empty states, friendlier helper text, "Clear Filters" reset.
 
 import { useState, useRef } from 'react'
 import type { Subject, Topic, FlatExperiment } from '../types'
@@ -40,6 +39,12 @@ function BrowseExperiments({ subjects, topics }: Props) {
     }))
   )
 
+  // ─── Check if any filter is active ───────────────────────────────────────────
+  const isFiltered =
+    searchQuery.trim() !== '' ||
+    selectedSubject !== 'all' ||
+    selectedTopic !== 'all'
+
   // ─── Apply filters ────────────────────────────────────────────────────────────
   const filtered = allExperiments.filter((exp) => {
     const matchesSubject =
@@ -55,7 +60,6 @@ function BrowseExperiments({ subjects, topics }: Props) {
   // ─── Handle card selection ────────────────────────────────────────────────────
   function handleSelect(experiment: FlatExperiment) {
     setSelectedExperiment(experiment)
-    // Scroll to the detail panel after React has updated the DOM.
     setTimeout(() => {
       detailRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' })
     }, 50)
@@ -65,13 +69,19 @@ function BrowseExperiments({ subjects, topics }: Props) {
     setSelectedExperiment(null)
   }
 
+  function handleClearFilters() {
+    setSearchQuery('')
+    setSelectedSubject('all')
+    setSelectedTopic('all')
+  }
+
   return (
-    <section id="browse-experiments" className="py-10 px-6 bg-stone-50 border-t border-stone-200">
+    <section id="browse-experiments" className="py-10 px-4 sm:px-6 bg-stone-50 border-t border-stone-200">
       <div className="max-w-5xl mx-auto">
         {/* Section heading */}
         <h2 className="text-2xl font-bold text-stone-800 mb-1">Browse All Experiments</h2>
         <p className="text-stone-500 text-sm mb-6">
-          Filter by subject, topic, or search by title. Click any card to see full details.
+          Use the filters below to find experiments by subject or topic. Click any card to see full details, including materials, instructions, concept explanation, and exam practice.
         </p>
 
         {/* Stage 7: Saved experiments section — shown above the filter bar */}
@@ -98,16 +108,27 @@ function BrowseExperiments({ subjects, topics }: Props) {
         {/* Results count */}
         <p className="text-sm text-stone-500 mb-4">
           {filtered.length === 0
-            ? 'No experiments match your filters.'
+            ? isFiltered
+              ? 'No experiments match your current filters.'
+              : 'No experiments available.'
             : `Showing ${filtered.length} experiment${filtered.length === 1 ? '' : 's'}`}
         </p>
 
-        {/* Experiment grid */}
+        {/* Experiment grid or empty state */}
         {filtered.length === 0 ? (
-          <div className="text-center py-12 text-stone-400">
-            <p className="text-4xl mb-3">🔍</p>
-            <p className="font-medium">No experiments found.</p>
-            <p className="text-sm mt-1">Try a different subject, topic, or search term.</p>
+          <div className="text-center py-12 border-2 border-dashed border-stone-200 rounded-2xl text-stone-400">
+            <p className="text-4xl mb-3" aria-hidden="true">🔍</p>
+            <p className="font-semibold text-stone-600 text-base">No experiments found.</p>
+            <p className="text-sm mt-1 text-stone-400">Try a different subject, topic, or search term.</p>
+            {isFiltered && (
+              <button
+                type="button"
+                onClick={handleClearFilters}
+                className="mt-4 text-sm font-semibold px-4 py-2 bg-amber-700 hover:bg-amber-800 text-white rounded-lg transition-colors duration-150"
+              >
+                ✕ Clear All Filters
+              </button>
+            )}
           </div>
         ) : (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
@@ -133,9 +154,11 @@ function BrowseExperiments({ subjects, topics }: Props) {
             />
           ) : (
             <div className="mt-8 text-center py-10 border-2 border-dashed border-stone-200 rounded-2xl text-stone-400">
-              <p className="text-3xl mb-2">🔬</p>
-              <p className="font-medium text-stone-500">No experiment selected yet.</p>
-              <p className="text-sm mt-1">Click "View Experiment" on any card above to see its full details here.</p>
+              <p className="text-3xl mb-2" aria-hidden="true">🔬</p>
+              <p className="font-medium text-stone-500">Select an experiment to see full details.</p>
+              <p className="text-sm mt-1 text-stone-400">
+                Click <strong>"View Experiment →"</strong> on any card above to begin the demo flow.
+              </p>
             </div>
           )}
         </div>
@@ -146,4 +169,3 @@ function BrowseExperiments({ subjects, topics }: Props) {
 }
 
 export default BrowseExperiments
-

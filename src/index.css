@@ -14,3 +14,33 @@ body {
     'Helvetica Neue', Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
 }
+
+/* ── Keyboard focus ring ─────────────────────────────────────────────────────
+   Ensures all interactive elements show a clear amber ring when focused
+   via keyboard (focus-visible). Browsers that support :focus-visible will
+   suppress the ring for mouse clicks.                                       */
+:focus-visible {
+  outline: 2px solid #d97706; /* amber-600 */
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Remove default outline only for mouse/pointer users */
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* ── Screen-reader-only utility ──────────────────────────────────────────────
+   Used for the skip-to-content link in App.tsx. The link becomes visible
+   when it receives keyboard focus (via focus:not-sr-only in Tailwind).     */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}

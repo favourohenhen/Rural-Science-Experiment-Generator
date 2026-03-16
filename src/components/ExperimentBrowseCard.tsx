@@ -1,7 +1,7 @@
 // ExperimentBrowseCard — shows a full experiment from the browse section.
 // Fields: title, short_description, subject_name, topic_name,
 // first 2–3 items from materials[], and a "View Experiment" button.
-// All fields are null-safe.
+// Stage 8: Added Safe + Everyday Materials badges; improved card consistency.
 
 import type { FlatExperiment } from '../types'
 
@@ -25,17 +25,24 @@ function ExperimentBrowseCard({ experiment, onSelect }: Props) {
   return (
     <div className="bg-white border border-stone-200 rounded-xl p-5 shadow-sm flex flex-col gap-3 hover:shadow-md transition-shadow duration-200">
       {/* Subject + topic badges */}
-      <div className="flex flex-wrap gap-2">
+      <div className="flex flex-wrap gap-1.5">
         {subject_name && (
-          <span className="bg-amber-100 text-amber-800 text-xs font-semibold px-2 py-1 rounded-full">
+          <span className="bg-amber-100 text-amber-800 text-xs font-semibold px-2 py-0.5 rounded-full">
             {subject_name}
           </span>
         )}
         {topic_name && (
-          <span className="bg-stone-100 text-stone-600 text-xs font-medium px-2 py-1 rounded-full">
+          <span className="bg-stone-100 text-stone-600 text-xs font-medium px-2 py-0.5 rounded-full">
             {topic_name}
           </span>
         )}
+        {/* Stage 8: attribute badges */}
+        <span className="inline-flex items-center gap-0.5 text-xs font-semibold bg-green-100 text-green-800 border border-green-200 px-2 py-0.5 rounded-full">
+          <span aria-hidden="true">✅</span> Safe
+        </span>
+        <span className="inline-flex items-center gap-0.5 text-xs font-semibold bg-amber-50 text-amber-700 border border-amber-200 px-2 py-0.5 rounded-full">
+          <span aria-hidden="true">🏡</span> Everyday Materials
+        </span>
       </div>
 
       {/* Title */}
@@ -59,7 +66,7 @@ function ExperimentBrowseCard({ experiment, onSelect }: Props) {
           <ul className="space-y-0.5">
             {materialsPreview.map((item, index) => (
               <li key={index} className="text-sm text-stone-600 flex gap-1.5">
-                <span className="text-amber-500 mt-0.5">•</span>
+                <span className="text-amber-500 mt-0.5" aria-hidden="true">•</span>
                 {item}
               </li>
             ))}
@@ -75,11 +82,12 @@ function ExperimentBrowseCard({ experiment, onSelect }: Props) {
       {/* View Experiment button — wires to Stage 3 detail view */}
       <div className="mt-auto pt-2">
         <button
+          type="button"
           onClick={() => onSelect(experiment)}
-          className="w-full bg-amber-700 hover:bg-amber-800 text-white text-sm font-semibold px-4 py-2 rounded-lg transition-colors duration-150"
+          className="w-full bg-amber-700 hover:bg-amber-800 text-white text-sm font-semibold px-4 py-2.5 rounded-lg transition-colors duration-150"
           aria-label={`View experiment: ${title}`}
         >
-          View Experiment
+          View Experiment →
         </button>
       </div>
     </div>
