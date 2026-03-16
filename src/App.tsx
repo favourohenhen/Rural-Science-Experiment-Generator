@@ -6,7 +6,6 @@ import data from './data/experiments.json'
 import type { ExperimentsData } from './types'
 
 import Header from './components/Header'
-import DemoFlowBanner from './components/DemoFlowBanner'
 import HeroSection from './components/HeroSection'
 import FeaturedExperiments from './components/FeaturedExperiments'
 import BrowseBySubject from './components/BrowseBySubject'
@@ -18,8 +17,8 @@ const experimentsData = data as ExperimentsData
 
 function App() {
   const featured = experimentsData?.featured_experiments ?? []
-  const subjects  = experimentsData?.subjects ?? []
-  const topics    = experimentsData?.topics ?? []
+  const subjects = experimentsData?.subjects ?? []
+  const topics = experimentsData?.topics ?? []
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -32,7 +31,6 @@ function App() {
       </a>
 
       <Header />
-      <DemoFlowBanner />
 
       <main id="main-content" className="flex-1">
         <HeroSection />

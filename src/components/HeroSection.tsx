@@ -1,12 +1,14 @@
 // HeroSection — introductory section with a headline and a clear "Start Demo" CTA.
-// Stage 8: Larger, more prominent button. Improved mobile padding.
+// Stage 8: Start Demo scrolls to #browse-experiments via JS with 50ms defer.
 
 function HeroSection() {
   function handleStartDemo() {
-    const section = document.getElementById('browse-experiments')
-    if (section) {
-      section.scrollIntoView({ behavior: 'smooth' })
-    }
+    setTimeout(() => {
+      const section = document.getElementById('browse-experiments')
+      if (section) {
+        section.scrollIntoView({ behavior: 'smooth', block: 'start' })
+      }
+    }, 50)
   }
 
   return (
@@ -20,7 +22,7 @@ function HeroSection() {
           using simple, local materials. No lab required.
         </p>
 
-        {/* Prominent Start Demo button */}
+        {/* Start Demo — scrolls directly to Browse All Experiments */}
         <button
           id="start-demo-btn"
           type="button"
