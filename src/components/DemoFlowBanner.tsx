@@ -1,51 +1,40 @@
 // DemoFlowBanner.tsx — Stage 8 polish component.
 // Shows a clear step-by-step demo flow near the top of the page.
-// Helps presenters and new users understand the app at a glance.
-// Lightweight — no state, no animation.
+// Simplified: text-only steps, no icon clutter.
 
 const STEPS = [
-  { number: '1', label: 'Select a Topic', icon: '📚' },
-  { number: '2', label: 'Perform Experiment', icon: '🔬' },
-  { number: '3', label: 'Local vs Lab', icon: '⚗️' },
-  { number: '4', label: 'Concept Explanation', icon: '💡' },
-  { number: '5', label: 'Exam Practice', icon: '📝' },
+  { number: '1', label: 'Select a Topic' },
+  { number: '2', label: 'Perform Experiment' },
+  { number: '3', label: 'Local vs Lab' },
+  { number: '4', label: 'Concept Explanation' },
+  { number: '5', label: 'Exam Practice' },
 ] as const
 
 export default function DemoFlowBanner() {
   return (
     <aside
       aria-label="Demo flow overview"
-      className="bg-amber-700 border-b border-amber-800"
+      className="bg-amber-800 border-b border-amber-900"
     >
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 py-3">
-        <p className="text-amber-200 text-xs font-semibold uppercase tracking-widest mb-2 text-center">
-          Demo Flow — 5 Steps
-        </p>
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 py-2.5">
         <ol
-          className="flex flex-wrap justify-center gap-2 sm:gap-3"
+          className="flex flex-wrap justify-center items-center gap-x-3 gap-y-1.5"
           aria-label="Demo steps"
         >
           {STEPS.map((step, idx) => (
-            <li
-              key={step.number}
-              className="flex items-center gap-1.5"
-            >
-              {/* Step pill */}
-              <span className="flex items-center gap-1.5 bg-amber-800/60 text-amber-100 text-xs font-medium px-3 py-1.5 rounded-full border border-amber-600/50 whitespace-nowrap">
+            <li key={step.number} className="flex items-center gap-2">
+              <span className="flex items-center gap-1.5 text-xs text-amber-200 whitespace-nowrap">
                 <span
-                  className="bg-white text-amber-800 font-bold text-xs rounded-full w-4 h-4 flex items-center justify-center shrink-0 leading-none"
+                  className="bg-amber-600 text-white font-bold text-xs rounded-full w-4 h-4 flex items-center justify-center shrink-0 leading-none"
                   aria-hidden="true"
                 >
                   {step.number}
                 </span>
-                <span aria-hidden="true">{step.icon}</span>
                 {step.label}
               </span>
-
-              {/* Arrow separator — hidden after last step */}
               {idx < STEPS.length - 1 && (
-                <span className="text-amber-500 text-xs hidden sm:inline" aria-hidden="true">
-                  →
+                <span className="text-amber-600 text-xs hidden sm:inline" aria-hidden="true">
+                  ›
                 </span>
               )}
             </li>

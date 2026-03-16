@@ -1,6 +1,6 @@
 // ExperimentDetailView — shows full details for a selected experiment.
 // Rendered inline below the card grid inside BrowseExperiments.
-// Stage 8: Added badges to header, improved safety note callout, keyboard focus on heading.
+// Stage 8: Improved safety note callout, keyboard focus on heading, mobile padding.
 
 import { useRef, useEffect } from 'react'
 import type { FlatExperiment } from '../types'
@@ -66,8 +66,6 @@ function ExperimentDetailView({ experiment, onClose, isSaved, onSave, onRemove }
   } = experiment
 
   // Move keyboard focus to the detail heading when the view opens.
-  // This is simple and helpful: screen readers and keyboard users are
-  // immediately brought to the new content without over-engineering.
   const headingRef = useRef<HTMLHeadingElement>(null)
   useEffect(() => {
     headingRef.current?.focus()
@@ -81,7 +79,7 @@ function ExperimentDetailView({ experiment, onClose, isSaved, onSave, onRemove }
       {/* ── Header bar ───────────────────────────────────────────────────── */}
       <div className="bg-amber-700 text-white px-4 sm:px-6 py-4 flex items-start justify-between gap-4">
         <div className="min-w-0">
-          {/* Focus is moved here when the detail view opens */}
+          {/* Focus lands here when the detail view opens */}
           <h2
             ref={headingRef}
             tabIndex={-1}
@@ -100,13 +98,6 @@ function ExperimentDetailView({ experiment, onClose, isSaved, onSave, onRemove }
                 {topic_name}
               </span>
             )}
-            {/* Stage 8: attribute badges */}
-            <span className="bg-green-700/50 text-green-100 text-xs font-semibold px-2 py-0.5 rounded-full border border-green-600/40">
-              ✅ Safe
-            </span>
-            <span className="bg-blue-900/40 text-blue-100 text-xs font-semibold px-2 py-0.5 rounded-full border border-blue-600/40">
-              📝 WAEC-Friendly
-            </span>
           </div>
         </div>
 
@@ -145,13 +136,13 @@ function ExperimentDetailView({ experiment, onClose, isSaved, onSave, onRemove }
           </section>
         )}
 
-        {/* Safety notes — prominent warning callout */}
+        {/* Safety notes — clear left-border callout */}
         <section aria-labelledby="safety-notes-heading">
           <h3
             id="safety-notes-heading"
-            className="text-sm font-bold text-red-700 uppercase tracking-wide mb-2 flex items-center gap-1.5"
+            className="text-sm font-bold text-red-700 uppercase tracking-wide mb-2"
           >
-            <span aria-hidden="true">⚠️</span> Safety Notes
+            ⚠️ Safety Notes
           </h3>
           <div className="bg-red-50 border-l-4 border-red-400 rounded-r-lg p-4">
             <BulletList
@@ -166,10 +157,7 @@ function ExperimentDetailView({ experiment, onClose, isSaved, onSave, onRemove }
           <h3 className="text-sm font-bold text-stone-500 uppercase tracking-wide mb-2">
             🧰 Materials Needed
           </h3>
-          <BulletList
-            items={materials}
-            fallback="No materials listed."
-          />
+          <BulletList items={materials} fallback="No materials listed." />
         </section>
 
         {/* Local alternatives */}
@@ -177,10 +165,7 @@ function ExperimentDetailView({ experiment, onClose, isSaved, onSave, onRemove }
           <h3 className="text-sm font-bold text-stone-500 uppercase tracking-wide mb-2">
             🏡 Local Alternatives
           </h3>
-          <BulletList
-            items={local_alternatives}
-            fallback="No local alternatives listed."
-          />
+          <BulletList items={local_alternatives} fallback="No local alternatives listed." />
         </section>
 
         {/* Stage 4: Local vs Lab comparison */}
@@ -191,10 +176,7 @@ function ExperimentDetailView({ experiment, onClose, isSaved, onSave, onRemove }
           <h3 className="text-sm font-bold text-stone-500 uppercase tracking-wide mb-3">
             📋 Instructions
           </h3>
-          <NumberedList
-            items={instructions}
-            fallback="No instructions available."
-          />
+          <NumberedList items={instructions} fallback="No instructions available." />
         </section>
 
         {/* Stage 5: Concept teaching */}

@@ -1,6 +1,6 @@
 // SavedExperiments.tsx — Stage 7 component.
 // Displays the list of experiments the user has saved to localStorage.
-// Stage 8: Added aria-live, Offline Ready badge, improved aria-labels.
+// Stage 8: Added aria-live and improved aria-labels for accessibility.
 
 import type { FlatExperiment } from '../types'
 
@@ -11,26 +11,21 @@ interface Props {
 }
 
 export default function SavedExperiments({ saved, onOpen, onRemove }: Props) {
-  // Don't render the section at all when the saved list is empty.
   if (saved.length === 0) return null
 
   return (
     <section className="mb-8" aria-label="Saved experiments">
-      {/* Section heading */}
       <h2 className="text-lg font-bold text-stone-800 mb-1 flex items-center gap-2">
         🔖 Saved Experiments
         <span className="text-sm font-normal text-stone-400">
           ({saved.length} saved)
-        </span>
-        <span className="inline-flex items-center gap-0.5 text-xs font-semibold bg-stone-100 text-stone-700 border border-stone-200 px-2 py-0.5 rounded-full">
-          <span aria-hidden="true">📶</span> Offline Ready
         </span>
       </h2>
       <p className="text-stone-500 text-sm mb-4">
         Your saved experiments are stored on this device and remain available offline.
       </p>
 
-      {/* Saved item list — aria-live announces changes to screen readers */}
+      {/* aria-live announces additions and removals to screen readers */}
       <div className="space-y-2" aria-live="polite" aria-label="Saved experiment list">
         {saved.map((exp) => (
           <div

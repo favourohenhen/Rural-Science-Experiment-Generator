@@ -1,7 +1,7 @@
 // ExperimentBrowseCard — shows a full experiment from the browse section.
 // Fields: title, short_description, subject_name, topic_name,
 // first 2–3 items from materials[], and a "View Experiment" button.
-// Stage 8: Added Safe + Everyday Materials badges; improved card consistency.
+// Stage 8: Consistent spacing, larger button click target, type="button".
 
 import type { FlatExperiment } from '../types'
 
@@ -36,13 +36,6 @@ function ExperimentBrowseCard({ experiment, onSelect }: Props) {
             {topic_name}
           </span>
         )}
-        {/* Stage 8: attribute badges */}
-        <span className="inline-flex items-center gap-0.5 text-xs font-semibold bg-green-100 text-green-800 border border-green-200 px-2 py-0.5 rounded-full">
-          <span aria-hidden="true">✅</span> Safe
-        </span>
-        <span className="inline-flex items-center gap-0.5 text-xs font-semibold bg-amber-50 text-amber-700 border border-amber-200 px-2 py-0.5 rounded-full">
-          <span aria-hidden="true">🏡</span> Everyday Materials
-        </span>
       </div>
 
       {/* Title */}
@@ -79,7 +72,7 @@ function ExperimentBrowseCard({ experiment, onSelect }: Props) {
         </div>
       )}
 
-      {/* View Experiment button — wires to Stage 3 detail view */}
+      {/* View Experiment button */}
       <div className="mt-auto pt-2">
         <button
           type="button"
@@ -87,7 +80,7 @@ function ExperimentBrowseCard({ experiment, onSelect }: Props) {
           className="w-full bg-amber-700 hover:bg-amber-800 text-white text-sm font-semibold px-4 py-2.5 rounded-lg transition-colors duration-150"
           aria-label={`View experiment: ${title}`}
         >
-          View Experiment →
+          View Experiment
         </button>
       </div>
     </div>
