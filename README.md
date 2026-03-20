@@ -1,4 +1,6 @@
-It is a beginner-friendly web app that helps teachers and students to explore science experiments using everyday materials, especially when a laboratory is not available.
+**Rural-Science-Experiment-Generator**
+
+A beginner-friendly web app that helps teachers and students to explore science experiments using everyday materials, especially when a laboratory is not available.
 
 Many students in rural or low-resource schools do not always have access to laboratories. This makes practical science learning difficult and limits their ability to understand experiments properly.
 
