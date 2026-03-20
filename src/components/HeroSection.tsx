@@ -1,16 +1,13 @@
-// HeroSection — introductory section with a headline and a clear "Start Demo" CTA.
-// Stage 8: Start Demo scrolls to #browse-experiments via JS with 50ms defer.
+// HeroSection — introductory section with a headline and "Start Demo" CTA.
+// Stage 8 + 2-page update: Start Demo navigates to Browse Experiments page.
 
-function HeroSection() {
-  function handleStartDemo() {
-    setTimeout(() => {
-      const section = document.getElementById('browse-experiments')
-      if (section) {
-        section.scrollIntoView({ behavior: 'smooth', block: 'start' })
-      }
-    }, 50)
-  }
+import type { Page } from '../App'
 
+interface Props {
+  onNavigate: (page: Page) => void
+}
+
+function HeroSection({ onNavigate }: Props) {
   return (
     <section className="bg-amber-50 border-b border-amber-100 py-12 px-4 sm:px-6">
       <div className="max-w-5xl mx-auto text-center">
@@ -22,11 +19,11 @@ function HeroSection() {
           using simple, local materials. No lab required.
         </p>
 
-        {/* Start Demo — scrolls directly to Browse All Experiments */}
+        {/* Start Demo — navigates to Browse Experiments page */}
         <button
           id="start-demo-btn"
           type="button"
-          onClick={handleStartDemo}
+          onClick={() => onNavigate('browse')}
           className="bg-amber-700 hover:bg-amber-800 active:bg-amber-900 text-white font-bold px-10 py-4 rounded-xl text-base shadow-md hover:shadow-lg transition-all duration-200"
         >
           Start Demo
